@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Detection Complete</h2>
+            <p>Detected Frame:</p>
+            <img src="{{ url_for('static', filename=image_path) }}" alt="Detection Frame" width="400">
+
+            <h3>Severity Level: {{ severity }}</h3>
+            <form method="post" action="/play">
+                <button type="submit">Play Detection Video</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Accident Detection System</p>
+    </footer>
+</body>
+</html>
